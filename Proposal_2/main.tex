@@ -1,0 +1,61 @@
+\input{preamble.tex}
+
+\title{Research Proposal 2-ECON 635}
+\author{Onur Karagozoglu}
+\date{}
+\doublespacing
+
+\begin{document}
+
+\maketitle
+
+\section*{Research Question}
+
+\textbf{Question:} Does the introduction and usage of artificial intelligence (AI) technologies alter the canonical result that the optimal capital tax should be zero in the long run?  
+
+This project examines how AI and machine learning tools should be incorporated into the macroeconomic production function, whether as total factor productivity (TFP), as an intangible form of capital, or as a labor-substituting input, and how this classification changes the efficiency and redistribution trade-offs that underpin optimal tax design.
+
+\section*{Motivation and Contribution}
+
+The rapid and intense diffusion of machine learning technologies such as large language models represents a profound technological shock. Unlike traditional inputs, AI embodies multiple characteristics such as, it can raise productivity (TFP), resemble intangible capital, and substitute for or complement human labor. This ambiguity has immediate implications for public finance: should AI be taxed as capital, as labor, or only indirectly via higher incomes?  
+
+The motivation of this question lies in the discussion of classification. In standard optimal taxation theory, \citet{Chamley1986} and \citet{Judd1985} show that in the long run, the optimal tax on capital converges to zero, since taxing capital accumulation is distortionary when households optimize intertemporally. \citet{AtkinsonStiglitz1976} further demonstrate that under separability conditions, only labor should be taxed. If AI is classified as capital, these results would suggest that taxing AI directly is undesirable. If AI substitutes for labor, however, targeted taxation may improve welfare by mitigating inequality. If AI functions as TFP, taxation enters only indirectly via higher factor incomes. The central motivation of this project is to ask whether AI reshapes the celebrated ``zero capital tax'' result, and if so, in which direction.  
+
+\medskip
+
+\noindent \textbf{Relation to Literature.}  
+Before my contribution it will be wise to mention about previous studies. Existing research has begun to explore taxation and automation but typically under narrower assumptions. \citet{GuerreiroRebeloTeles2022} model robots as labor-substituting inputs and show that taxing them may be optimal during transition. \citet{Thummel2023} demonstrates that distortions to robot adoption can be optimal, with the sign depending on complementarities. \citet{CostinotWerning2022} derive sufficient statistics formulas showing when automation taxes improve welfare. \citet{KorinekStiglitz2018, KorinekStiglitz2021} emphasize the distributional and rent-sharing implications of AI as a productivity shock. \citet{SaezStantcheva2016} illustrate that the Chamley-Judd result is fragile once heterogeneity and instrument constraints are introduced. And finally \citet{BastaniWaldenstrom2024} provide a policy oriented overview of automation and taxation debates.  
+
+These contributions are valuable but partial: most assume AI is either labor-substituting (robots) or purely productivity-enhancing, and (but) none systematically compare the implications of different AI classifications for the robustness of the zero-capital-tax theorem.  
+
+\medskip
+
+\noindent \textbf{Contribution.}  
+This project advances the literature by systematically embedding AI into the production function in three alternative ways (i) as TFP, (ii) as intangible capital, and (iii) as labor-substituting input, and tracing the consequences for optimal taxation. The aim is to produce a comparative map: under which assumptions does the Chamley-Judd zero capital tax result survive, and under which assumptions does it fail?  
+
+The contribution is threefold:  
+\begin{enumerate}
+    \item \textbf{Theoretical.} Provide a unified framework that connects the classification of AI to long-run tax prescriptions, clarifying when zero capital taxation is robust and when positive AI taxation is justified.  
+    \item \textbf{Methodological.} Contrast the welfare implications of different AI classifications within the same overlapping-generations or DSGE (or even HANK) model, something the current literature does not attempt.  
+    \item \textbf{Policy relevance.} Offer guidance for governments on whether AI should be taxed as capital, as labor, or indirectly, thereby bridging the gap between abstract optimal tax theory and the emerging AI taxation debate.  
+\end{enumerate}
+
+\section*{Data}
+
+The analysis requires information on AI adoption, its productivity effects, and distributional consequences. Publicly available datasets provide a starting point:  
+
+\begin{itemize}
+    \item \textbf{Firm-level adoption and investment.} Compustat reports R\&D and intangible assets that proxy for AI investment. Patent data (WIPO, USPTO) capture AI innovation. Venture capital datasets such as Crunchbase or PitchBook track AI-related funding.  
+    \item \textbf{Sectoral and aggregate adoption.} OECD and Eurostat publish surveys on AI diffusion across industries. The U.S. Census Bureau’s Annual Business Survey recently added AI adoption questions.  
+    \item \textbf{Labor market outcomes.} The Current Population Survey (CPS) and the Panel Study of Income Dynamics (PSID) provide employment, hours, and wage data, and we can compare and contrast which enabling analysis of substitution between AI and labor. The Survey of Consumer Finances (SCF) documents distributional outcomes.  
+    \item \textbf{Productivity measures.} Bureau of Labor Statistics (BLS) industry-level productivity data and OECD productivity databases can be matched with AI adoption rates to calibrate TFP effects.  
+\end{itemize}
+
+These datasets allow calibration of substitution elasticities, documentation of adoption heterogeneity, and empirical discipline for simulations of alternative tax regimes. Restricted datasets such as IRS-linked firm panels could refine measurement of intangible capital and tax incidence, but are not essential for the initial stage.
+\newpage
+\bibliographystyle{apalike}
+\bibliography{reference2}
+
+\end{document}
+
+
