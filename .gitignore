@@ -1,0 +1,18 @@
+# LaTeX build files (ignore)
+*.aux
+*.bbl
+*.blg
+*.brf
+*.log
+*.out
+*.synctex.gz
+*.toc
+*.lof
+*.lot
+*.fls
+*.fdb_latexmk
+*.xwm
+*.xdv
+*.nav
+*.snm
+
