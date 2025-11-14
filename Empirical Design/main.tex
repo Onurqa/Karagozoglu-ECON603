@@ -1,0 +1,88 @@
+\input{preamble.tex}
+
+\title{Empirical Design-ECON 635}
+\author{Onur Karagozoglu}
+\date{}
+\doublespacing
+
+\begin{document}
+
+\maketitle
+\section*{Empirical Design}
+
+This part of the study includes a unified empirical framework part which is combining three complementary mechanisms from the proposal. The empirical design of this study is threefold: marriage as a social insurance, tax and subsidy incentives, and cultural–religious norms. Each channel reflects a different way in which poverty interacts with marriage formation.
+
+As we discussed in the class, clear evidence from \citet{GarciaHeckman2023} demonstrates that disadvantaged groups in the U.S. have lower marriage rates. On the other hand in the absence of well-functioning credit and insurance markets, pooling resources through household formation provides protection against income shocks, unemployment, and childrearing costs which could have create incentives for the marriage. From this point of view, if marriage functions as a form of risk-sharing, then income volatility rather than income level should predict marriage formation among disadvantaged individuals. Two empirical approaches are used to capture this mechanism.  
+
+To investigate the marriage as a social insurance argument, a panel specification tests whether spousal earnings covary negatively within married households, consistent with the “added worker effect”. In this setup a negative covariance between partners income implies that when one partner faces an income shock, the other compensates by adjusting labor supply and implicitly household income level. We can model this idea formally as such: 
+
+\[
+Var(Y_{household}) = Var(Y_{male}) + Var(Y_{female}) + 2Cov(Y_{male}, Y_{female}),
+\]
+
+where a lower or negative \(Cov(Y_{male}, Y_{female})\) reduces household income risk and increases the insurance value of marriage. In addition, the probability of marriage can be modeled as:
+
+\[
+P(Marriage_{it} = 1) = \alpha + \beta_1 Cov(Income_{male,it}, Income_{female,it}) + \beta_2 Volatility_{it} + X_{it}'\theta + \mu_i + \tau_t + \varepsilon_{it},
+\]
+
+where \(\text{Volatility}_{it}\) is the standard deviation of income over a five-year moving window, and \(X_{it}\) includes demographic controls. A negative \(\beta_1\) or positive \(\beta_2\) supports the insurance interpretation such as a higher individual income risk or lower income covariance increases marriage likelihood especially among the disadvantaged portion of the society.
+
+Secondly, fiscal programs such as tax-transfer programs may either reinforce or crowd out the insurance role of marriage. The Earned Income Tax Credit (EITC) in the U.S. is a key quasi-experimental policy to identify this effect. The EITC is a refundable credit with a phase-in, plateau, and phase-out region: in the phase-in region, benefits increase with income (\(C(y)=\rho_k y\)); in the plateau, the credit is constant (\(C(y)=\overline{C}_k\)); and in the phase-out, it declines (\(C(y)=\overline{C}_k-\phi_k (y-\overline{y}_k)\)). As the EITC is calculated on household income, marriage can shift couples between these regions, creating either marriage bonuses or penalties.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.85\textwidth]{figures/plateu.png}
+    \caption{EITC schedule with phase-in, plateau, and phase-out regions}
+\end{figure}
+
+
+
+So in this part of the analysis exploits major EITC reforms, such as the 1993 expansion, within a difference-in-differences design:
+
+\[
+MarriageRate_{st} = \alpha + \beta (\text{Post}_t \times \text{TreatedGroup}_s) + \gamma_s + \delta_t + X_{st}'\theta + \varepsilon_{st},
+\]
+
+where \(\text{TreatedGroup}_s\) captures low-income or single-earner households most affected by the reform. A positive \(\beta\) indicates that expanded credits increase marriage rates through fiscal incentives.  
+
+To test substitution or complementarity with the insurance channel, the PSID analysis includes participation in programs such as EITC, SNAP, TANF, and Medicaid:
+
+\begin{align*}
+Marriage_{it} = \, & \alpha + \beta_1 Cov(Income_{male,it}, Income_{female,it}) 
++ \beta_2 Program_{it} \\
+& + \beta_3 (Cov \times Program)_{it} + X_{it}'\theta 
++ \mu_i + \tau_t + \varepsilon_{it}
+\end{align*}
+
+
+where a negative \(\beta_3\) suggests that public transfers crowd out marriage’s private insurance role, while a positive \(\beta_3\) implies complementarity when fiscal design rewards joint filing.
+
+ 
+Lastly, cultural norms may or may not sustain marriage independently of income risk. Religiosity is particularly relevant and over-presented among disadvantaged groups, where moral or social norms can motivate marriage even in the absence of economic stability. The following specification introduces religiosity as a moderating variable:
+
+\begin{align*}
+Marriage_{it} = \, & \alpha + \beta_1 Cov(Income_{male,it}, Income_{female,it})
++ \beta_2 Religiosity_{it} \\
+& + \beta_3 (Cov \times Religiosity)_{it} + X_{it}'\theta
++ \mu_i + \tau_t + \varepsilon_{it}
+\end{align*}
+
+
+A negative \(\beta_3\) would confirm that religiosity substitutes for the insurance motive as religious households marry for normative reasons rather than risk-sharing.  
+
+As a complementary source of evidence, this study may include an original survey designed to understand the motivations and incentives behind marriage and singlehood across different income groups. The idea is to draw a representative sample of the overall population, while intentionally oversampling low-income individuals. This approach allows comparison between disadvantaged households and the population average in both marriage rates and stated reasons for marital status. 
+
+The survey would ask each respondent whether they are currently married, cohabiting, or single, and then follow up with a short module asking the underlying reasons for that status. Married respondents would indicate why they chose to marry, whether for emotional commitment, financial security, risk sharing, cultural or religious expectations, or family stability, while single respondents would be asked why they remain unmarried, such as economic insecurity, fear of financial dependence, loss of benefits, or lack of suitable partners. These questions make it possible to identify whether low-income individuals perceive marriage primarily as a financial burden, as an informal insurance mechanism, or as a moral and social expectation. The survey will be nationally representative but stratified by income, education, and region to ensure variation in both economic and cultural environments. By comparing the distribution of marriage and singlehood reasons across income groups, the study will test whether disadvantaged individuals differ systematically from the general population. If low-income respondents are less likely to be married but report financial insecurity and program-related penalties as main barriers, it would support the view that institutional design suppresses marriage despite potential insurance benefits. Conversely, if marriage rates among the poor are higher in highly religious areas and financial motives are less prominent, it would suggest that cultural norms rather than economic risk explain household formation.  
+
+This survey aims to be complement (a robustness check) for the econometric analysis by providing direct behavioral evidence on how people interpret the trade-offs between financial stability, policy incentives, and moral norms when deciding whether to marry. It connects individual perceptions to the broader social-insurance and fiscal mechanisms explored in the empirical analysis.
+
+
+
+\newpage
+\bibliographystyle{apalike}
+\bibliography{referenceempirical}
+
+\end{document}
+
+
