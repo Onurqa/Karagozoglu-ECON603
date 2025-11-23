@@ -1,0 +1,101 @@
+\input{preamble.tex}
+
+\title{Empirical Results-ECON 635}
+\author{Onur Karagozoglu}
+\date{}
+\doublespacing
+
+\begin{document}
+
+\maketitle
+
+This section of the study implements the unified empirical framework proposed above. ( This is only preliminary results; I am well aware they are not perfect, but this is my first time working with PSID data and econometric tools, I am working hard, and the final version of the paper will be better than this.) 
+
+
+As we discussed in class, clear evidence from \citet{GarciaHeckman2023} shows that disadvantaged groups in the U.S. have lower marriage rates. On the other hand, we have three mechanisms that may point in a different direction and provide incentives to marry, particularly among the most disadvantaged groups: marriage as a form of informal insurance, tax and subsidy incentives that alter the financial returns to household formation, and cultural or religious norms that shape marital behavior independently of economic conditions. The insurance mechanism focuses on whether individuals facing higher income volatility are more likely to marry and whether spouses’ earnings covary in ways that stabilize household income. The fiscal mechanism examines how policies such as the Earned Income Tax Credit generate marriage bonuses or penalties that may either reinforce or weaken the insurance value of marriage. And finally, the cultural–religious mechanism highlights how norms and beliefs can sustain marriage even in the absence of economic stability, as it can create an incentive to marry. 
+
+Within this framework, we would expect that if marriage functions as an informal insurance mechanism, individuals exposed to greater idiosyncratic income volatility before marriage should exhibit a higher propensity to marry. To assess this prediction, we estimate the probability of marriage as a function of pre-marriage income volatility and individual controls:
+
+\[
+P(Marriage_{it} = 1) = \alpha + \beta_1 Volatility_i^{pre} + X_{it}\theta + \mu_i + \tau_t + \varepsilon_{it}.
+\]
+
+The empirical results, however, do not align with this theoretical expectation and are consistent with the patterns documented in \citet{GarciaHeckman2023}. The coefficient on pre-marriage volatility is quantitatively negligible and statistically indistinguishable from zero, indicating that variation in individual income risk prior to marriage does not systematically translate into higher marriage probabilities in the PSID sample. Rather than supporting the insurance-based interpretation, this pattern suggests that income volatility alone is not a meaningful driver of marriage formation, at least as measured using available panel income histories.
+
+\begin{table}[H]
+\centering
+\caption{Effect of Pre-Marriage Volatility on Marriage}
+\begin{tabular}{lcc}
+\toprule
+ & (1) \\
+ & Married (binary) \\
+\midrule
+Volatility (pre) & -0.012 & \\
+ & (0.112) \\
+Age & 0.210*** \\
+ & (0.037) \\
+Age$^2$ & -0.002*** \\
+ & (0.001) \\
+Year FE & Yes \\
+Constant & -5.209*** \\
+ & (0.614) \\
+\midrule
+Observations & 6814 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The large and precisely estimated age coefficients reflect the familiar life-cycle pattern in marriage formation, while the year fixed effects capture time trends consistent with the broader decline in marriage rates documented in \citet{GarciaHeckman2023}.
+
+
+
+Another mechanism explores whether religiosity moderates the insurance motive behind marriage. Religiosity which is overrepresented in the most disadvantaged part of the society, may encourage marriage independently of economic considerations or may diminish the relevance of income risk by providing an alternative, non-economic rationale for household formation. To evaluate this possibility, we estimate a model that interacts pre-marriage income volatility with individual religiosity:
+
+\[
+Marriage_{it} = \alpha + \beta_1 Volatility_i^{pre} 
++ \beta_2 Religiosity_{it} 
++ \beta_3 (Volatility_i^{pre} \times Religiosity_{it}) 
++ X_{it}\theta + \mu_i + \tau_t + \varepsilon_{it}.
+\]
+
+If religiosity substitutes for the insurance value of marriage, individuals who are more religious should be less responsive to income volatility, implying a negative interaction term. The empirical estimates are broadly consistent with this interpretation. The coefficient on the interaction term is (-0.206), suggesting that religiosity weakens the relationship between income risk and marriage formation. However, the estimate is imprecise and not statistically significant, indicating substantial uncertainty around this pattern.
+
+\begin{table}[H]
+\centering
+\caption{Volatility $\times$ Religiosity Interaction}
+\begin{tabular}{lcc}
+\toprule
+ & (1) \\
+ & Married (binary) \\
+\midrule
+Volatility (pre) & 0.108 \\
+ & (0.125) \\
+Religiosity & -0.025 \\
+ & (0.142) \\
+Volatility $\times$ Religiosity & -0.206 \\
+ & (0.140) \\
+Age & 0.202*** \\
+ & (0.038) \\
+Age$^2$ & -0.002*** \\
+ & (0.001) \\
+Year FE & Yes \\
+Constant & -5.043*** \\
+ & (0.637) \\
+\midrule
+Observations & 6814 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Taken together, the negative sign suggests that more religious individuals may marry for reasons unrelated to income stabilization as we sugeest, thereby reducing the extent to which income volatility influences marriage decisions. However the lack of statistical precision means the evidence should be interpreted cautiously (and I will add more results in the part in the final version).
+
+Lastly, as outlined earlier, a survey can provide direct evidence on motivations behind marriage and singlehood, complementing the PSID analysis. Oversampling low-income respondents helps identify whether disadvantaged individuals perceive marriage as (1) financial security, (2) informal insurance, or (3) a cultural–religious norm. Such evidence helps interpret why volatility plays no detectable role in PSID regressions and why religiosity appears to dampen the role of economic risk.
+
+
+\newpage
+\bibliographystyle{apalike}
+\bibliography{referenceempirical}
+
+\end{document}
+
+
